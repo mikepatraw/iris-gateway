@@ -76,6 +76,14 @@ describe("PairingStore", () => {
     expect(result).toEqual({ channelId: "telegram", senderId: "user1" });
   });
 
+
+  it("samples characters without modulo bias cutoff regressions", async () => {
+    const sampleStore = store as PairingStore & { sampleAlphabetCharacter(): string };
+    for (let i = 0; i < 64; i++) {
+      expect(sampleStore.sampleAlphabetCharacter()).toMatch(/^[A-Z2-9]$/);
+    }
+  });
+
   it("prunes expired codes", async () => {
     const expiredStore = new PairingStore(tempDir, 1, 8); // 1ms TTL
     await expiredStore.issueCode("telegram", "user1");

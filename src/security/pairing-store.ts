@@ -95,12 +95,21 @@ export class PairingStore {
   }
 
   private generateCode(): string {
-    const bytes = randomBytes(this.codeLength);
     let code = "";
-    for (let i = 0; i < this.codeLength; i++) {
-      code += ALPHABET[bytes[i]! % ALPHABET.length];
+    while (code.length < this.codeLength) {
+      code += this.sampleAlphabetCharacter();
     }
     return code;
+  }
+
+  private sampleAlphabetCharacter(): string {
+    const maxUnbiasedByte = 256 - (256 % ALPHABET.length);
+    while (true) {
+      const byte = randomBytes(1)[0]!;
+      if (byte < maxUnbiasedByte) {
+        return ALPHABET[byte % ALPHABET.length]!;
+      }
+    }
   }
 
   private pruneExpired(requests: PairingRequest[]): void {
