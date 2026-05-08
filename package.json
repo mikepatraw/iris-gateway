@@ -49,6 +49,9 @@
     "zod": "^3.24.0"
   },
   "pnpm": {
+    "overrides": {
+      "axios": "1.15.1"
+    },
     "onlyBuiltDependencies": [
       "@whiskeysockets/baileys",
       "better-sqlite3",
