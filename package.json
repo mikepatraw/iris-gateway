@@ -50,7 +50,8 @@
   },
   "pnpm": {
     "overrides": {
-      "axios": "1.15.1"
+      "axios": "1.15.1",
+      "lodash-es": "4.18.0"
     },
     "onlyBuiltDependencies": [
       "@whiskeysockets/baileys",
@@ -58,10 +59,7 @@
       "esbuild",
       "protobufjs",
       "sharp"
-    ],
-    "overrides": {
-      "axios": "1.15.1"
-    }
+    ]
   },
   "devDependencies": {
     "@clack/prompts": "^1.1.0",
