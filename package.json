@@ -36,7 +36,7 @@
     "croner": "^10.0.1",
     "discord.js": "^14.25.0",
     "grammy": "^1.40.0",
-    "hono": "^4.0.0",
+    "hono": "4.12.18",
     "jiti": "^2.6.1",
     "pino": "^10.3.1",
     "prom-client": "^15.1.3",
@@ -50,7 +50,8 @@
   },
   "pnpm": {
     "overrides": {
-      "axios": "1.15.1"
+      "axios": "1.15.1",
+      "hono": "4.12.18"
     },
     "onlyBuiltDependencies": [
       "@whiskeysockets/baileys",
@@ -58,10 +59,7 @@
       "esbuild",
       "protobufjs",
       "sharp"
-    ],
-    "overrides": {
-      "axios": "1.15.1"
-    }
+    ]
   },
   "devDependencies": {
     "@clack/prompts": "^1.1.0",
